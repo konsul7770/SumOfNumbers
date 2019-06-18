@@ -1,0 +1,33 @@
+﻿<html>
+	<head>
+	
+	</head>
+	<body>
+		<h2>Введите числа</h2>
+		<form>
+		Первое число<br>
+		<input type="text" value="0.1" id="num1"><br>
+		Второе число<br>
+		<input type="text" value="0.2" id="num2"><br>
+		<button type="button" onclick="summ()">Сложить</button>
+		</form>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script type="text/javascript">
+		
+		//функция суммирования и вывода полученного значения
+		function summ(){
+			var x = document.getElementById("num1").value;
+			var y = document.getElementById("num2").value;
+
+			//проверка, являются ли введенные значения числами
+			//если да, суммируем, выводим значение, нет - сообщение об ошибке
+			if((isNaN(x))||(isNaN(y))){
+				swal("Ошибка","Поля заполнены некорректно","error");
+			}else{
+				var sum = (parseFloat(x) + parseFloat(y)).toFixed(1);
+				swal("Результат",sum.toString());
+			}
+		}
+		</script>
+	</body>
+</html>
